@@ -1,66 +1,46 @@
 'use client';
-import { Badge } from '@/components/ui/badge';
-import { DataTableColumnHeader } from '@/components/data-table/data-table-column-header';
-import type { User } from '../../api/types';
 import type { ColumnDef } from '@tanstack/react-table';
+import { DataTableColumnHeader } from '@/components/data-table/data-table-column-header';
+import { Badge } from '@/components/ui/badge';
 import type { DataTableFeatures } from '@/lib/data-table-features';
-import { Icons } from '@/components/icons';
+import type { User } from '../../api/types';
 import { CellAction } from './cell-action';
-import { ROLE_OPTIONS } from './options';
+import { RoleBadges } from './role-badges';
 
+// Sorting and filtering are off: the backend list does not support them yet.
 export const columns: ColumnDef<DataTableFeatures, User>[] = [
   {
     id: 'name',
-    accessorFn: (row) => `${row.first_name} ${row.last_name}`,
+    accessorKey: 'name',
+    enableSorting: false,
     header: ({ column }) => <DataTableColumnHeader column={column} label='Name' />,
     cell: ({ row }) => (
       <div className='flex flex-col'>
-        <span className='font-medium'>
-          {row.original.first_name} {row.original.last_name}
-        </span>
+        <span className='font-medium'>{row.original.name}</span>
         <span className='text-muted-foreground text-xs'>{row.original.email}</span>
       </div>
     ),
-    meta: {
-      label: 'Name',
-      placeholder: 'Search users...',
-      variant: 'text' as const,
-      icon: Icons.text
-    },
-    enableColumnFilter: true
+    meta: { label: 'Name' }
   },
   {
-    accessorKey: 'phone',
-    header: 'PHONE'
-  },
-  {
-    id: 'role',
-    accessorKey: 'role',
+    id: 'roles',
+    accessorKey: 'roleIds',
     enableSorting: false,
-    header: ({ column }) => <DataTableColumnHeader column={column} label='Role' />,
-    cell: ({ cell }) => {
-      return (
-        <Badge variant='outline' className='capitalize'>
-          {cell.getValue<User['role']>()}
-        </Badge>
-      );
-    },
-    enableColumnFilter: true,
-    meta: {
-      label: 'roles',
-      variant: 'multiSelect' as const,
-      options: ROLE_OPTIONS
-    }
+    header: ({ column }) => <DataTableColumnHeader column={column} label='Roles' />,
+    cell: ({ row }) => <RoleBadges roleIds={row.original.roleIds} />,
+    meta: { label: 'Roles' }
   },
   {
-    accessorKey: 'status',
-    header: 'STATUS',
-    cell: ({ cell }) => {
-      const status = cell.getValue<User['status']>();
-      const variant =
-        status === 'Active' ? 'default' : status === 'Inactive' ? 'secondary' : 'outline';
-      return <Badge variant={variant}>{status}</Badge>;
-    }
+    id: 'status',
+    accessorKey: 'disabled',
+    enableSorting: false,
+    header: ({ column }) => <DataTableColumnHeader column={column} label='Status' />,
+    cell: ({ row }) => (
+      <Badge variant={row.original.disabled ? 'secondary' : 'default'}>
+        {row.original.disabled ? 'Disabled' : 'Active'}
+      </Badge>
+    ),
+    meta: { label: 'Status' }
   },
   {
     id: 'actions',

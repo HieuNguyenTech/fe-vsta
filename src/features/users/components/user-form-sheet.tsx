@@ -1,9 +1,11 @@
 'use client';
 
 import { useState } from 'react';
+import { useMutation, useQuery, useQueryClient } from '@tanstack/react-query';
+import { toast } from 'sonner';
+import { Icons } from '@/components/icons';
 import { Button } from '@/components/ui/button';
-import { FieldGroup } from '@/components/ui/field';
-import { useAppForm } from '@/lib/form';
+import { FieldError, FieldGroup } from '@/components/ui/field';
 import { LoadingButton } from '@/components/ui/loading-button';
 import {
   Sheet,
@@ -13,19 +15,14 @@ import {
   SheetHeader,
   SheetTitle
 } from '@/components/ui/sheet';
-import { Icons } from '@/components/icons';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { useAuth } from '@/features/auth/components/auth-provider';
+import { PERMISSIONS } from '@/features/auth/permissions';
+import { roleQueries } from '@/features/roles/api/queries';
+import { canGrant } from '@/features/roles/can-grant';
+import { useAppForm } from '@/lib/form';
 import { userMutations, userQueries } from '../api/queries';
 import type { User } from '../api/types';
-import { toast } from 'sonner';
-import { userSchema, type UserFormValues } from '../schemas/user';
-import { ROLE_OPTIONS } from './users-table/options';
-
-const STATUS_OPTIONS = [
-  { value: 'Active', label: 'Active' },
-  { value: 'Inactive', label: 'Inactive' },
-  { value: 'Invited', label: 'Invited' }
-];
+import { getUserSchema, type UserFormValues } from '../schemas/user';
 
 interface UserFormSheetProps {
   user?: User;
@@ -33,56 +30,72 @@ interface UserFormSheetProps {
   onOpenChange: (open: boolean) => void;
 }
 
+const sameItems = (a: string[], b: string[]) =>
+  a.length === b.length && a.every((item) => b.includes(item));
+
 export function UserFormSheet({ user, open, onOpenChange }: UserFormSheetProps) {
   const isEdit = !!user;
   const queryClient = useQueryClient();
+  const { user: actor, can } = useAuth();
+  const canReadRoles = can(PERMISSIONS.roleRead);
+  const roles = useQuery({ ...roleQueries.list(), enabled: open && canReadRoles });
 
-  const createMutation = useMutation({
-    ...userMutations.create(),
+  const handlers = {
     onSuccess: () => {
-      toast.success('User created');
-      onOpenChange(false);
-      form.reset();
+      toast.success(isEdit ? 'User updated' : 'User created');
+      close();
     },
-    onError: () => toast.error("Couldn't create user. Try again."),
+    onError: (error: Error) => toast.error(error.message),
     onSettled: () => queryClient.invalidateQueries({ queryKey: userQueries.all() })
-  });
-
-  const updateMutation = useMutation({
-    ...userMutations.update(),
-    onSuccess: () => {
-      toast.success('User updated');
-      onOpenChange(false);
-    },
-    onError: () => toast.error("Couldn't update user. Try again."),
-    onSettled: () => queryClient.invalidateQueries({ queryKey: userQueries.all() })
-  });
+  };
+  const createMutation = useMutation({ ...userMutations.create(), ...handlers });
+  const updateMutation = useMutation({ ...userMutations.update(), ...handlers });
 
   const form = useAppForm({
     defaultValues: {
-      first_name: user?.first_name ?? '',
-      last_name: user?.last_name ?? '',
       email: user?.email ?? '',
-      phone: user?.phone ?? '',
-      role: user?.role ?? '',
-      status: user?.status ?? 'Active'
+      name: user?.name ?? '',
+      password: '',
+      roleIds: user?.roleIds ?? [],
+      disabled: user?.disabled ?? false
     } as UserFormValues,
     validators: {
-      onSubmit: userSchema
+      onSubmit: getUserSchema(isEdit)
     },
-    onSubmit: async ({ value }) => {
-      if (isEdit) {
-        await updateMutation.mutateAsync({ id: user.id, values: value });
-      } else {
-        await createMutation.mutateAsync(value);
+    onSubmit: ({ value }) => {
+      const { email, password, roleIds, disabled } = value;
+      const name = value.name.trim();
+
+      if (!user) {
+        createMutation.mutate({ email, name, password, roleIds });
+        return;
       }
+
+      const details = {
+        ...(name !== user.name && { name }),
+        ...(password && { password }),
+        ...(disabled !== user.disabled && { disabled })
+      };
+      updateMutation.mutate({
+        id: user.id,
+        changes: {
+          ...(Object.keys(details).length > 0 && { details }),
+          ...(!sameItems(roleIds, user.roleIds) && { roleIds })
+        }
+      });
     }
   });
 
+  function close() {
+    onOpenChange(false);
+    form.reset();
+  }
+
   const isPending = createMutation.isPending || updateMutation.isPending;
+  const formId = `user-form-${user?.id ?? 'new'}`;
 
   return (
-    <Sheet open={open} onOpenChange={onOpenChange}>
+    <Sheet open={open} onOpenChange={(next) => (next ? onOpenChange(true) : close())}>
       <SheetContent className='flex flex-col'>
         <SheetHeader>
           <SheetTitle>{isEdit ? 'Edit User' : 'New User'}</SheetTitle>
@@ -95,80 +108,79 @@ export function UserFormSheet({ user, open, onOpenChange }: UserFormSheetProps) 
 
         <div className='flex-1 overflow-auto'>
           <form
-            id='user-form-sheet'
-            className='space-y-4 p-4 md:p-4'
+            id={formId}
+            className='space-y-4 p-4'
             onSubmit={(e) => {
               e.preventDefault();
               form.handleSubmit();
             }}
           >
             <FieldGroup>
-              <div className='grid grid-cols-2 gap-4'>
-                <form.AppField
-                  name='first_name'
-                  children={(field) => (
-                    <field.TextField label='First Name' required placeholder='John' />
-                  )}
-                />
-                <form.AppField
-                  name='last_name'
-                  children={(field) => (
-                    <field.TextField label='Last Name' required placeholder='Doe' />
-                  )}
-                />
-              </div>
-
+              <form.AppField
+                name='name'
+                children={(field) => <field.TextField label='Name' required />}
+              />
               <form.AppField
                 name='email'
                 children={(field) => (
+                  <field.TextField label='Email' type='email' required disabled={isEdit} />
+                )}
+              />
+              <form.AppField
+                name='password'
+                children={(field) => (
                   <field.TextField
-                    label='Email'
-                    required
-                    type='email'
-                    placeholder='john@example.com'
+                    label={isEdit ? 'New password' : 'Password'}
+                    type='password'
+                    autoComplete='new-password'
+                    required={!isEdit}
+                    description={
+                      isEdit
+                        ? 'Leave empty to keep the current password.'
+                        : 'At least 12 characters.'
+                    }
                   />
                 )}
               />
 
-              <form.AppField
-                name='phone'
-                children={(field) => (
-                  <field.TextField label='Phone' required type='tel' placeholder='(555) 123-4567' />
-                )}
-              />
+              {canReadRoles && (
+                <form.AppField
+                  name='roleIds'
+                  mode='array'
+                  children={(field) => (
+                    <field.CheckboxGroupField
+                      label='Roles'
+                      options={(roles.data ?? []).map((role) => ({
+                        value: role.id,
+                        label: role.name,
+                        disabled: !canGrant(actor, role)
+                      }))}
+                    />
+                  )}
+                />
+              )}
+              {roles.error && <FieldError>{roles.error.message}</FieldError>}
 
-              <form.AppField
-                name='role'
-                children={(field) => (
-                  <field.SelectField
-                    label='Role'
-                    required
-                    options={ROLE_OPTIONS}
-                    placeholder='Select role'
-                  />
-                )}
-              />
-
-              <form.AppField
-                name='status'
-                children={(field) => (
-                  <field.SelectField
-                    label='Status'
-                    required
-                    options={STATUS_OPTIONS}
-                    placeholder='Select status'
-                  />
-                )}
-              />
+              {isEdit && (
+                <form.AppField
+                  name='disabled'
+                  children={(field) => (
+                    <field.SwitchField
+                      label='Disabled'
+                      description='A disabled user cannot sign in.'
+                    />
+                  )}
+                />
+              )}
             </FieldGroup>
           </form>
         </div>
 
         <SheetFooter>
-          <Button type='button' variant='outline' onClick={() => onOpenChange(false)}>
+          <Button type='button' variant='outline' onClick={close}>
             Cancel
           </Button>
-          <LoadingButton loading={isPending} type='submit' form='user-form-sheet'>
+          <LoadingButton loading={isPending} type='submit' form={formId}>
             {isEdit ? 'Update User' : 'Create User'}
           </LoadingButton>
         </SheetFooter>
@@ -179,6 +191,8 @@ export function UserFormSheet({ user, open, onOpenChange }: UserFormSheetProps) 
 
 export function UserFormSheetTrigger() {
   const [open, setOpen] = useState(false);
+  const { can } = useAuth();
+  if (!can(PERMISSIONS.userManage)) return null;
 
   return (
     <>

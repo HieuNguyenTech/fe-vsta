@@ -1,60 +1,46 @@
 'use client';
 
+import { useQuery } from '@tanstack/react-query';
+import { parseAsInteger, useQueryStates } from 'nuqs';
 import { DataTable } from '@/components/data-table/data-table';
+import { DataTableSkeleton } from '@/components/data-table/data-table-skeleton';
 import { DataTableToolbar } from '@/components/data-table/data-table-toolbar';
 import { useDataTable } from '@/hooks/use-data-table';
-import { useSuspenseQuery } from '@tanstack/react-query';
-import { parseAsInteger, parseAsString, useQueryStates } from 'nuqs';
-import { getSortingStateParser } from '@/lib/data-table-parsers';
 import { userQueries } from '../../api/queries';
 import { columns } from './columns';
+
+/** The backend rejects larger pages. */
+const MAX_PAGE_SIZE = 100;
 
 export function UsersTable() {
   const [params] = useQueryStates({
     page: parseAsInteger.withDefault(1),
-    perPage: parseAsInteger.withDefault(10),
-    name: parseAsString,
-    role: parseAsString,
-    // Same parser as the server searchParamsCache, so the prefetched query key matches
-    sort: getSortingStateParser().withDefault([])
+    perPage: parseAsInteger.withDefault(10)
   });
 
-  const filters = {
-    page: params.page,
-    limit: params.perPage,
-    ...(params.name && { search: params.name }),
-    ...(params.role && { roles: params.role }),
-    ...(params.sort.length > 0 && { sort: JSON.stringify(params.sort) })
-  };
-
-  const { data } = useSuspenseQuery(userQueries.list(filters));
-
-  const pageCount = Math.ceil(data.total_users / params.perPage);
+  const { data, error } = useQuery(
+    userQueries.list({
+      page: Math.max(params.page, 1),
+      limit: Math.min(Math.max(params.perPage, 1), MAX_PAGE_SIZE)
+    })
+  );
 
   const { table } = useDataTable({
-    data: data.users,
+    data: data?.data ?? [],
     columns,
-    pageCount,
+    pageCount: data?.meta.totalPages ?? -1,
     shallow: true,
-    debounceMs: 500,
     initialState: {
       columnPinning: { start: [], end: ['actions'] }
     }
   });
 
+  if (error) return <p role='alert'>{error.message}</p>;
+  if (!data) return <DataTableSkeleton columnCount={4} rowCount={10} filterCount={0} />;
+
   return (
     <DataTable table={table}>
       <DataTableToolbar table={table} />
     </DataTable>
-  );
-}
-
-export function UsersTableSkeleton() {
-  return (
-    <div className='flex flex-1 animate-pulse flex-col gap-4'>
-      <div className='bg-muted h-10 w-full rounded' />
-      <div className='bg-muted h-96 w-full rounded-lg' />
-      <div className='bg-muted h-10 w-full rounded' />
-    </div>
   );
 }

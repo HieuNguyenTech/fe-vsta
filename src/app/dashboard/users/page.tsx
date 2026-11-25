@@ -1,33 +1,24 @@
-import { auth } from '@clerk/nextjs/server';
 import PageContainer from '@/components/layout/page-container';
-import UserListingPage from '@/features/users/components/user-listing';
-import { searchParamsCache } from '@/lib/searchparams';
-import type { SearchParams } from 'nuqs/server';
-import { usersInfoContent } from '@/features/users/info-content';
+import { PERMISSIONS } from '@/features/auth/permissions';
+import { canAccess } from '@/features/auth/server/current-user';
 import { UserFormSheetTrigger } from '@/features/users/components/user-form-sheet';
+import { UsersTable } from '@/features/users/components/users-table';
 
 export const metadata = {
   title: 'Dashboard: Users'
 };
 
-type PageProps = {
-  searchParams: Promise<SearchParams>;
-};
-
-export default async function UsersPage(props: PageProps) {
-  await auth.protect();
-
-  const searchParams = await props.searchParams;
-  searchParamsCache.parse(searchParams);
+export default async function UsersPage() {
+  const access = await canAccess(PERMISSIONS.userRead);
 
   return (
     <PageContainer
+      access={access}
       pageTitle='Users'
-      pageDescription='Manage users (React Query + nuqs table pattern.)'
-      infoContent={usersInfoContent}
-      pageHeaderAction={<UserFormSheetTrigger />}
+      pageDescription='Manage accounts and their roles.'
+      pageHeaderAction={access && <UserFormSheetTrigger />}
     >
-      <UserListingPage />
+      <UsersTable />
     </PageContainer>
   );
 }

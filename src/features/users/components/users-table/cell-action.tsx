@@ -1,4 +1,8 @@
 'use client';
+import { useState } from 'react';
+import { useMutation, useQueryClient } from '@tanstack/react-query';
+import { toast } from 'sonner';
+import { Icons } from '@/components/icons';
 import { AlertModal } from '@/components/modal/alert-modal';
 import { Button } from '@/components/ui/button';
 import {
@@ -9,12 +13,10 @@ import {
   DropdownMenuLabel,
   DropdownMenuTrigger
 } from '@/components/ui/dropdown-menu';
+import { useAuth } from '@/features/auth/components/auth-provider';
+import { PERMISSIONS } from '@/features/auth/permissions';
 import { userMutations, userQueries } from '../../api/queries';
 import type { User } from '../../api/types';
-import { Icons } from '@/components/icons';
-import { useState } from 'react';
-import { useMutation, useQueryClient } from '@tanstack/react-query';
-import { toast } from 'sonner';
 import { UserFormSheet } from '../user-form-sheet';
 
 interface CellActionProps {
@@ -25,18 +27,21 @@ export function CellAction({ data }: CellActionProps) {
   const [deleteOpen, setDeleteOpen] = useState(false);
   const [editOpen, setEditOpen] = useState(false);
   const queryClient = useQueryClient();
+  const { user, can } = useAuth();
 
   const deleteMutation = useMutation({
     ...userMutations.delete(),
-    onSuccess: () => {
-      toast.success('User deleted successfully');
+    onSuccess: () => toast.success('User deleted successfully'),
+    onError: (error) => toast.error(error.message),
+    onSettled: () => {
       setDeleteOpen(false);
-    },
-    onError: () => {
-      toast.error('Failed to delete user');
-    },
-    onSettled: () => queryClient.invalidateQueries({ queryKey: userQueries.all() })
+      return queryClient.invalidateQueries({ queryKey: userQueries.all() });
+    }
   });
+
+  // The backend does not let anyone manage their own account here.
+  if (data.id === user.id) return <span className='text-muted-foreground text-xs'>You</span>;
+  if (!can(PERMISSIONS.userManage)) return null;
 
   return (
     <>

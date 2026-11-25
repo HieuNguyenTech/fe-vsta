@@ -1,28 +1,32 @@
-export type { User } from '@/constants/mock-api-users';
-
-export type UserFilters = {
-  page?: number;
-  limit?: number;
-  roles?: string;
-  search?: string;
-  sort?: string;
-};
-
-export type UsersResponse = {
-  success: boolean;
-  time: string;
-  message: string;
-  total_users: number;
-  offset: number;
-  limit: number;
-  users: import('@/constants/mock-api-users').User[];
-};
-
-export type UserMutationPayload = {
-  first_name: string;
-  last_name: string;
+export type User = {
+  id: string;
   email: string;
-  phone: string;
-  role: string;
-  status: string;
+  name: string;
+  roleIds: string[];
+  disabled: boolean;
+};
+
+/** The backend list only accepts paging. */
+export type UserFilters = {
+  page: number;
+  limit: number;
+};
+
+export type CreateUserPayload = {
+  email: string;
+  name: string;
+  password: string;
+  roleIds: string[];
+};
+
+export type UpdateUserPayload = {
+  name?: string;
+  password?: string;
+  disabled?: boolean;
+};
+
+/** Only the parts that changed. Details and roles are separate backend calls. */
+export type UserChanges = {
+  details?: UpdateUserPayload;
+  roleIds?: string[];
 };
