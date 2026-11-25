@@ -5,11 +5,12 @@ import { parseAsInteger, useQueryStates } from 'nuqs';
 import { DataTable } from '@/components/data-table/data-table';
 import { DataTableSkeleton } from '@/components/data-table/data-table-skeleton';
 import { useDataTable } from '@/hooks/use-data-table';
+import type { DataTableFeatures } from '@/lib/data-table-features';
 import { contactQueries } from '../api/queries';
 import type { Contact } from '../api/types';
 import type { ColumnDef } from '@tanstack/react-table';
 
-const columns: ColumnDef<Contact>[] = [
+const columns: ColumnDef<DataTableFeatures, Contact>[] = [
   { accessorKey: 'name', header: 'Họ và tên' },
   { accessorKey: 'email', header: 'Email' },
   { accessorKey: 'subject', header: 'Chủ đề' },
