@@ -5,7 +5,9 @@ export const PERMISSIONS = {
   userRead: 'user:read',
   userManage: 'user:manage',
   roleRead: 'role:read',
-  roleManage: 'role:manage'
+  roleManage: 'role:manage',
+  contactRead: 'contact:read',
+  contactManage: 'contact:manage'
 } as const;
 
 // UI convenience only: the backend enforces every permission on its own.

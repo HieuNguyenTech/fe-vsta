@@ -72,6 +72,15 @@ export const navGroups: NavGroup[] = [
         isActive: false,
         items: [],
         access: { permission: PERMISSIONS.roleRead }
+      },
+      {
+        title: 'Contacts',
+        url: '/dashboard/contacts',
+        icon: 'mail',
+        shortcut: ['c', 'c'],
+        isActive: false,
+        items: [],
+        access: { permission: PERMISSIONS.contactRead }
       }
     ]
   }

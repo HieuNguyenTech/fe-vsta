@@ -7,6 +7,8 @@ services:
       dockerfile: Dockerfile
       args:
         NEXT_PUBLIC_SENTRY_DISABLED: ${NEXT_PUBLIC_SENTRY_DISABLED:-true}
+        BACKEND_URL: ${BACKEND_URL:-http://api:8000/api}
+        NEXT_PUBLIC_BACKEND_URL: ${NEXT_PUBLIC_BACKEND_URL:-}
     image: cms-frontend:latest
     container_name: cms-frontend
     restart: unless-stopped
