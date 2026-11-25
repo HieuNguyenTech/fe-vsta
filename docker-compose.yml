@@ -20,9 +20,9 @@ services:
     ports:
       - '3000:3000'
     networks:
-      - cms-base_default
+      - cms-be_default
 
 networks:
-  cms-base_default:
+  cms-be_default:
     external: true
-    name: cms-base_default
+    name: cms-be_default
