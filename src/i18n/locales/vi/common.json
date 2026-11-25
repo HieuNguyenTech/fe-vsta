@@ -1,0 +1,146 @@
+{
+  "viewAll": "Xem tất cả",
+  "search": "Tìm kiếm",
+  "searchPending": "Chức năng tìm kiếm đang được hoàn thiện.",
+  "signIn": "Đăng nhập",
+  "joinMember": "Đăng ký hội viên",
+  "language": "Ngôn ngữ",
+  "logo": {
+    "homeLabel": "Hiệp hội Thương mại Giống cây trồng Việt Nam, về trang chủ",
+    "line1": "HIỆP HỘI THƯƠNG MẠI",
+    "line2": "GIỐNG CÂY TRỒNG VIỆT NAM",
+    "tagline": "Vietnam Seed Trade Association"
+  },
+  "header": {
+    "searchPlaceholder": "Tìm giống, văn bản, tin tức...",
+    "searchSubmit": "Tìm",
+    "mainMenu": "Menu chính"
+  },
+  "mobileNav": {
+    "title": "Menu",
+    "open": "Mở menu",
+    "close": "Đóng menu",
+    "overview": "Tổng quan"
+  },
+  "menu": {
+    "home": {
+      "label": "Trang chủ"
+    },
+    "gioi-thieu": {
+      "label": "Giới thiệu",
+      "pages": {
+        "ve-vsta": "Về VSTA",
+        "lich-su-hinh-thanh": "Lịch sử hình thành",
+        "bon-tru-cot-hoat-dong": "Bốn trụ cột hoạt động",
+        "co-cau-to-chuc-lanh-dao": "Cơ cấu tổ chức, lãnh đạo",
+        "dieu-le-va-quy-che": "Điều lệ và quy chế"
+      }
+    },
+    "hoi-vien": {
+      "label": "Hội viên",
+      "pages": {
+        "danh-ba-hoi-vien": "Danh bạ hội viên",
+        "mang-luoi-chi-hoi": "Mạng lưới chi hội",
+        "quyen-loi-hoi-vien": "Quyền lợi hội viên",
+        "dang-ky-gia-nhap": "Đăng ký gia nhập",
+        "ho-so-hoi-vien-tieu-bieu": "Hồ sơ hội viên tiêu biểu"
+      }
+    },
+    "tin-tuc": {
+      "label": "Tin tức",
+      "mobileLabel": "Tin tức & sự kiện",
+      "pages": {
+        "tin-hiep-hoi": "Tin hiệp hội",
+        "tin-hoi-vien": "Tin hội viên",
+        "tin-nganh-giong": "Tin ngành giống",
+        "tin-quoc-te": "Tin quốc tế",
+        "lich-su-kien": "Lịch sự kiện"
+      }
+    },
+    "khoa-hoc-cong-nghe": {
+      "label": "Khoa học công nghệ",
+      "pages": {
+        "linh-vuc-trong-tam": "Lĩnh vực trọng tâm",
+        "danh-muc-de-tai": "Danh mục đề tài",
+        "bai-viet": "Bài viết khoa học công nghệ",
+        "hoi-dong-khoa-hoc-chuyen-gia": "Hội đồng khoa học & chuyên gia"
+      }
+    },
+    "tra-cuu-giong": {
+      "label": "Tra cứu giống",
+      "pages": {
+        "theo-ten-giong": "Tra cứu theo tên giống",
+        "cong-nhan-luu-hanh": "Giống công nhận lưu hành",
+        "tu-cong-bo-luu-hanh": "Giống tự công bố lưu hành",
+        "duoc-bao-ho": "Giống được bảo hộ",
+        "het-hieu-luc": "Giống hết hiệu lực"
+      }
+    },
+    "phap-luat": {
+      "label": "Pháp luật",
+      "mobileLabel": "Pháp luật & chính sách",
+      "pages": {
+        "kho-van-ban": "Kho văn bản pháp luật",
+        "van-ban-moi-ban-hanh": "Văn bản mới ban hành",
+        "thu-tuc-tu-cong-bo-luu-hanh": "Thủ tục tự công bố lưu hành",
+        "thu-tuc-bao-ho-giong": "Thủ tục bảo hộ giống"
+      }
+    },
+    "tu-lieu": {
+      "label": "Tư liệu",
+      "pages": {
+        "thu-vien-anh": "Thư viện ảnh",
+        "video-phong-su": "Video, phóng sự",
+        "ky-yeu-bao-cao-an-pham": "Kỷ yếu, báo cáo, ấn phẩm",
+        "sach-75-nam": "Sách 75 năm ngành trồng trọt"
+      }
+    },
+    "lien-he": {
+      "label": "Liên hệ"
+    }
+  },
+  "contact": {
+    "address": "P2.17 Tòa nhà Viện Di truyền Nông nghiệp, Km 2 đường Phạm Văn Đồng, phường Cổ Nhuế, quận Bắc Từ Liêm, TP Hà Nội",
+    "phone": "ĐT: (84.4) 7345549 · Fax: (84.4) 7340387"
+  },
+  "footer": {
+    "slogan": "Đồng hành cùng ngành giống Việt Nam",
+    "about": "Tổ chức xã hội – nghề nghiệp của các doanh nghiệp sản xuất, kinh doanh giống cây trồng, kết nối hội viên với cơ quan quản lý và thị trường.",
+    "phoneLabel": "Điện thoại",
+    "columns": {
+      "association": {
+        "title": "Về hiệp hội",
+        "links": {
+          "intro": "Giới thiệu chung",
+          "history": "Lịch sử hình thành",
+          "leadership": "Ban lãnh đạo",
+          "charter": "Điều lệ & quy chế",
+          "contact": "Liên hệ"
+        }
+      },
+      "data": {
+        "title": "Dữ liệu & tư liệu",
+        "links": {
+          "lookup": "Tra cứu giống",
+          "legal": "Văn bản pháp luật",
+          "science": "Khoa học công nghệ",
+          "media": "Thư viện ảnh, video",
+          "book": "Sách 75 năm ngành trồng trọt"
+        }
+      },
+      "members": {
+        "title": "Hội viên",
+        "links": {
+          "directory": "Danh bạ hội viên",
+          "branches": "Mạng lưới chi hội",
+          "benefits": "Quyền lợi hội viên",
+          "join": "Đăng ký gia nhập",
+          "news": "Tin hội viên"
+        }
+      }
+    },
+    "copyright": "© 2026 Phát triển bởi Trần Tuấn (GST). Bảo lưu bản quyền",
+    "terms": "Điều khoản sử dụng",
+    "privacy": "Chính sách bảo mật"
+  }
+}

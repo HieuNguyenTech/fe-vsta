@@ -1,5 +1,4 @@
 'use client';
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -34,10 +33,15 @@ import { toast } from 'sonner';
 import { Icons } from '@/components/icons';
 import { useAuth } from '@/features/auth/components/auth-provider';
 import { apiClient } from '@/lib/api-client';
+import { cn } from '@/lib/utils';
+import Image from 'next/image';
+import { useState } from 'react';
 
 async function signOut() {
   try {
     await apiClient('/auth/logout', { method: 'POST' });
+    document.cookie = 'cms_access=; path=/; max-age=0';
+    document.cookie = 'cms_refresh=; path=/; max-age=0';
     // A full load drops all cached data of this user.
     window.location.assign('/login');
   } catch {
@@ -52,7 +56,26 @@ export default function AppSidebar() {
 
   return (
     <Sidebar collapsible='icon'>
-      <SidebarHeader />
+      <SidebarHeader>
+        <SidebarMenu>
+          <SidebarMenuItem>
+            <SidebarMenuButton
+              render={<Link href='/dashboard/overview' aria-label='Vietnam Seed Dashboard' />}
+              size='lg'
+              tooltip='Vietnam Seed'
+            >
+              <Image
+                src='/vietnamseed-logo.jpg'
+                alt='Vietnam Seed'
+                width={263}
+                height={193}
+                className='size-8 shrink-0 rounded-md object-cover'
+              />
+              <span className='truncate font-semibold'>Vietnam Seed</span>
+            </SidebarMenuButton>
+          </SidebarMenuItem>
+        </SidebarMenu>
+      </SidebarHeader>
       <SidebarContent className='overflow-x-hidden'>
         {filteredGroups.map((group) => (
           <SidebarGroup key={group.label || 'ungrouped'} className='py-0'>
@@ -118,6 +141,8 @@ function NavMainItem({ item, pathname }: { item: NavItem; pathname: string }) {
   const { state, isMobile } = useSidebar();
   const Icon = item.icon ? Icons[item.icon] : Icons.logo;
   const children = item.items ?? [];
+  const hasActiveChild = children.some((child) => isActivePath(pathname, child.url));
+  const [isOpen, setIsOpen] = useState(item.isActive || hasActiveChild);
 
   if (children.length === 0) {
     return (
@@ -133,8 +158,6 @@ function NavMainItem({ item, pathname }: { item: NavItem; pathname: string }) {
       </SidebarMenuItem>
     );
   }
-
-  const hasActiveChild = children.some((child) => isActivePath(pathname, child.url));
 
   // The icon rail hides sub-items, so a group opens its links in a menu to the right instead
   if (state === 'collapsed' && !isMobile) {
@@ -192,21 +215,22 @@ function NavMainItem({ item, pathname }: { item: NavItem; pathname: string }) {
   }
 
   return (
-    <Collapsible defaultOpen={item.isActive || hasActiveChild} render={<SidebarMenuItem />}>
-      <CollapsibleTrigger
-        render={
-          <SidebarMenuButton
-            tooltip={item.title}
-            isActive={pathname === item.url}
-            className='group/collapsible'
-          />
-        }
+    <SidebarMenuItem>
+      <SidebarMenuButton
+        type='button'
+        tooltip={item.title}
+        isActive={hasActiveChild || isActivePath(pathname, item.url)}
+        className='group/collapsible'
+        aria-expanded={isOpen}
+        onClick={() => setIsOpen((open) => !open)}
       >
         {item.icon && <Icon />}
         <span>{item.title}</span>
-        <Icons.chevronRight className='ml-auto transition-transform duration-200 group-data-panel-open/collapsible:rotate-90' />
-      </CollapsibleTrigger>
-      <CollapsibleContent>
+        <Icons.chevronRight
+          className={cn('ml-auto transition-transform duration-200', isOpen && 'rotate-90')}
+        />
+      </SidebarMenuButton>
+      {isOpen && (
         <SidebarMenuSub>
           {children.map((child) => (
             <SidebarMenuSubItem key={child.title}>
@@ -219,7 +243,7 @@ function NavMainItem({ item, pathname }: { item: NavItem; pathname: string }) {
             </SidebarMenuSubItem>
           ))}
         </SidebarMenuSub>
-      </CollapsibleContent>
-    </Collapsible>
+      )}
+    </SidebarMenuItem>
   );
 }

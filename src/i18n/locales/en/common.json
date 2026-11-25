@@ -1,0 +1,148 @@
+{
+  "viewAll": "View all",
+  "search": "Search",
+  "searchPending": "Search is not available yet.",
+  "signIn": "Sign in",
+  "joinMember": "Become a member",
+  "language": "Language",
+  "logo": {
+    "homeLabel": "Vietnam Seed Trade Association, go to home page",
+    "line1": "VIETNAM SEED",
+    "line2": "TRADE ASSOCIATION",
+    "tagline": "VSTA"
+  },
+  "header": {
+    "searchPlaceholder": "Search varieties, documents, news...",
+    "searchSubmit": "Search",
+    "mainMenu": "Main menu"
+  },
+  "mobileNav": {
+    "title": "Menu",
+    "open": "Open menu",
+    "close": "Close menu",
+    "overview": "Overview"
+  },
+  "menu": {
+    "home": {
+      "label": "Home"
+    },
+    "gioi-thieu": {
+      "label": "About",
+      "pages": {
+        "ve-vsta": "About VSTA",
+        "lich-su-hinh-thanh": "History",
+        "bon-tru-cot-hoat-dong": "Four pillars of activity",
+        "co-cau-to-chuc-lanh-dao": "Organisation and leadership",
+        "dieu-le-va-quy-che": "Charter and regulations"
+      }
+    },
+    "hoi-vien": {
+      "label": "Members",
+      "pages": {
+        "danh-ba-hoi-vien": "Member directory",
+        "mang-luoi-chi-hoi": "Branch network",
+        "quyen-loi-hoi-vien": "Member benefits",
+        "dang-ky-gia-nhap": "Apply to join",
+        "ho-so-hoi-vien-tieu-bieu": "Featured members"
+      }
+    },
+    "tin-tuc": {
+      "label": "News",
+      "mobileLabel": "News & events",
+      "pages": {
+        "tin-hiep-hoi": "Association news",
+        "tin-hoi-vien": "Member news",
+        "tin-nganh-giong": "Seed industry news",
+        "tin-quoc-te": "International news",
+        "lich-su-kien": "Event calendar"
+      }
+    },
+    "khoa-hoc-cong-nghe": {
+      "label": "Science",
+      "mobileLabel": "Science & technology",
+      "pages": {
+        "linh-vuc-trong-tam": "Focus areas",
+        "danh-muc-de-tai": "Research projects",
+        "bai-viet": "Science & technology articles",
+        "hoi-dong-khoa-hoc-chuyen-gia": "Scientific council & experts"
+      }
+    },
+    "tra-cuu-giong": {
+      "label": "Varieties",
+      "mobileLabel": "Variety lookup",
+      "pages": {
+        "theo-ten-giong": "Search by variety name",
+        "cong-nhan-luu-hanh": "Recognised for circulation",
+        "tu-cong-bo-luu-hanh": "Self-declared for circulation",
+        "duoc-bao-ho": "Protected varieties",
+        "het-hieu-luc": "Expired varieties"
+      }
+    },
+    "phap-luat": {
+      "label": "Legal",
+      "mobileLabel": "Law & policy",
+      "pages": {
+        "kho-van-ban": "Legal document library",
+        "van-ban-moi-ban-hanh": "Newly issued documents",
+        "thu-tuc-tu-cong-bo-luu-hanh": "Self-declaration procedure",
+        "thu-tuc-bao-ho-giong": "Variety protection procedure"
+      }
+    },
+    "tu-lieu": {
+      "label": "Library",
+      "pages": {
+        "thu-vien-anh": "Photo gallery",
+        "video-phong-su": "Videos and reports",
+        "ky-yeu-bao-cao-an-pham": "Proceedings, reports, publications",
+        "sach-75-nam": "Book: 75 years of crop production"
+      }
+    },
+    "lien-he": {
+      "label": "Contact"
+    }
+  },
+  "contact": {
+    "address": "Room P2.17, Agricultural Genetics Institute Building, Km 2 Pham Van Dong Road, Co Nhue Ward, Bac Tu Liem District, Hanoi",
+    "phone": "Tel: (84.4) 7345549 · Fax: (84.4) 7340387"
+  },
+  "footer": {
+    "slogan": "Partnering with Vietnam's seed industry",
+    "about": "A socio-professional organisation of plant variety producers and traders, connecting members with regulators and the market.",
+    "phoneLabel": "Phone",
+    "columns": {
+      "association": {
+        "title": "The Association",
+        "links": {
+          "intro": "Introduction",
+          "history": "History",
+          "leadership": "Leadership",
+          "charter": "Charter & regulations",
+          "contact": "Contact"
+        }
+      },
+      "data": {
+        "title": "Data & library",
+        "links": {
+          "lookup": "Variety lookup",
+          "legal": "Legal documents",
+          "science": "Science & technology",
+          "media": "Photos and videos",
+          "book": "75 years of crop production"
+        }
+      },
+      "members": {
+        "title": "Members",
+        "links": {
+          "directory": "Member directory",
+          "branches": "Branch network",
+          "benefits": "Member benefits",
+          "join": "Apply to join",
+          "news": "Member news"
+        }
+      }
+    },
+    "copyright": "© 2026 Developed by Golden Seed Technology Co., Ltd. (GST). All rights reserved",
+    "terms": "Terms of use",
+    "privacy": "Privacy policy"
+  }
+}

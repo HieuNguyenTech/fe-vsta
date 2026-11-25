@@ -1,0 +1,324 @@
+{
+  "meta": {
+    "title": "Hiệp hội Thương mại Giống cây trồng Việt Nam (VSTA)",
+    "description": "Tra cứu giống cây trồng, văn bản pháp luật, tin tức, sự kiện và danh bạ hội viên của VSTA."
+  },
+  "hero": {
+    "label": "Nội dung nổi bật",
+    "goToSlide": "Chuyển đến slide {index}",
+    "previous": "Slide trước",
+    "next": "Slide tiếp theo",
+    "scrollDown": "Cuộn xuống",
+    "slides": {
+      "database": {
+        "label": "Cơ sở dữ liệu giống",
+        "title": "Dữ liệu giống chính thống,\ntra cứu trong vài giây",
+        "description": "Hơn 3.400 giống cây trồng đã được công nhận, tự công bố lưu hành và bảo hộ – tra cứu theo tên, loài cây, đơn vị sở hữu và vùng khuyến cáo.",
+        "shortDescription": "Hơn 3.400 giống cây trồng đã được công nhận, tự công bố lưu hành và bảo hộ.",
+        "primary": "Tra cứu giống ngay",
+        "secondary": "Tìm hiểu về VSTA"
+      },
+      "legal": {
+        "label": "Pháp luật & chính sách",
+        "title": "Kho văn bản ngành giống,\nluôn rõ trạng thái hiệu lực",
+        "description": "Luật, nghị định, thông tư và hướng dẫn thủ tục được hệ thống theo lĩnh vực, kèm mốc ban hành và tình trạng còn hiệu lực.",
+        "shortDescription": "Luật, nghị định, thông tư kèm mốc ban hành và tình trạng hiệu lực.",
+        "primary": "Xem văn bản pháp luật",
+        "secondary": "Hướng dẫn thủ tục"
+      },
+      "community": {
+        "label": "Cộng đồng hội viên",
+        "title": "Kết nối hơn 120 doanh nghiệp,\nnâng tầm thương hiệu giống Việt",
+        "description": "Danh bạ hội viên, mạng lưới chi hội theo vùng và các chương trình xúc tiến thương mại trong, ngoài nước.",
+        "shortDescription": "Danh bạ hội viên và mạng lưới chi hội theo vùng.",
+        "primary": "Danh bạ hội viên",
+        "secondary": "Đăng ký gia nhập"
+      }
+    }
+  },
+  "stats": {
+    "heading": "Ngành giống Việt Nam qua các con số",
+    "shortHeading": "Ngành giống qua các con số",
+    "source": "Số liệu minh họa · cập nhật 15/11/2026",
+    "items": {
+      "varieties": {
+        "label": "Giống cây trồng trong cơ sở dữ liệu",
+        "shortLabel": "Giống trong CSDL",
+        "note": "Tăng 126 giống so với năm 2025",
+        "shortNote": "Tăng 126 giống"
+      },
+      "documents": {
+        "label": "Văn bản pháp luật về giống",
+        "shortLabel": "Văn bản pháp luật",
+        "note": "Có trạng thái hiệu lực rõ ràng",
+        "shortNote": "Rõ hiệu lực"
+      },
+      "members": {
+        "label": "Doanh nghiệp hội viên",
+        "shortLabel": "Doanh nghiệp hội viên",
+        "note": "Thuộc 12 chi hội theo vùng",
+        "shortNote": "12 chi hội"
+      },
+      "projects": {
+        "label": "Đề tài khoa học công nghệ",
+        "shortLabel": "Đề tài KHCN",
+        "note": "Đang triển khai và đã nghiệm thu",
+        "shortNote": "Đang triển khai"
+      }
+    }
+  },
+  "news": {
+    "eyebrow": "Tin tức & sự kiện",
+    "title": "Thông tin nổi bật trong tuần",
+    "description": "Cập nhật hoạt động của Hiệp hội, hội viên và thị trường giống trong và ngoài nước.",
+    "readMore": "Đọc tiếp",
+    "viewAllNews": "Xem tất cả tin tức",
+    "quickTitle": "Tin nhanh",
+    "tabs": {
+      "association": {
+        "label": "Tin hiệp hội",
+        "shortLabel": "Tin hiệp hội",
+        "badge": "Hội nghị",
+        "shortBadge": "Tin hiệp hội",
+        "meta": "17/04/2026 · Hoạt động hiệp hội",
+        "title": "Đại hội đại biểu VSTA nhiệm kỳ 2026–2031: Đổi mới để hội viên được hưởng lợi nhiều hơn",
+        "summary": "Đại hội thông qua phương hướng hoạt động 5 năm, tập trung số hóa dữ liệu giống, hỗ trợ pháp lý và mở rộng thị trường xuất khẩu hạt giống.",
+        "shortSummary": "Đại hội thông qua phương hướng 5 năm, tập trung số hóa dữ liệu giống và hỗ trợ pháp lý."
+      },
+      "member": {
+        "label": "Tin hội viên",
+        "shortLabel": "Tin hội viên",
+        "badge": "Hội viên",
+        "shortBadge": "Hội viên",
+        "meta": "16/11/2026 · Tin hội viên",
+        "title": "Hội viên giới thiệu bộ giống lúa chất lượng cao cho vụ Đông Xuân",
+        "summary": "Các giống ngắn ngày, chống chịu tốt, phù hợp vùng đồng bằng – doanh nghiệp hội viên chủ động nguồn cung cho vụ tới.",
+        "shortSummary": "Giống ngắn ngày, chống chịu tốt, phù hợp vùng đồng bằng."
+      },
+      "international": {
+        "label": "Tin quốc tế",
+        "shortLabel": "Quốc tế",
+        "badge": "Quốc tế",
+        "shortBadge": "Quốc tế",
+        "meta": "15/11/2026 · Tin quốc tế",
+        "title": "Campuchia – thị trường tiềm năng cho giống cây trồng Việt Nam",
+        "summary": "Doanh nghiệp đề xuất chiến lược xuất khẩu giống, cung cấp cả công nghệ và quy trình canh tác thay vì chỉ xuất khẩu nông sản thô.",
+        "shortSummary": "Đề xuất chiến lược xuất khẩu giống kèm công nghệ, quy trình canh tác."
+      }
+    },
+    "rows": {
+      "autumnReview": {
+        "title": "Hội nghị tổng kết sản xuất giống vụ Thu Đông 2026 khu vực ĐBSCL"
+      },
+      "saltTolerantRice": {
+        "title": "Doanh nghiệp hội viên ra mắt 3 giống lúa chịu mặn mới"
+      },
+      "circularDraft": {
+        "title": "Góp ý dự thảo Thông tư hướng dẫn tự công bố lưu hành giống"
+      },
+      "apsaDelegation": {
+        "title": "Đoàn VSTA tham dự Hội nghị Giống cây trồng châu Á – Thái Bình Dương"
+      },
+      "processingLine": {
+        "title": "Hội viên đầu tư dây chuyền chế biến hạt giống tự động"
+      },
+      "maizeLinkage": {
+        "title": "Mô hình liên kết sản xuất giống ngô lai với hợp tác xã"
+      },
+      "vegetableDealers": {
+        "title": "Doanh nghiệp rau giống mở rộng hệ thống đại lý miền Trung"
+      },
+      "ecosystemExport": {
+        "title": "Xuất khẩu “hệ sinh thái nông nghiệp”: giống, công nghệ, quy trình"
+      },
+      "regionalCongress": {
+        "title": "Đoàn doanh nghiệp giống dự hội nghị khu vực châu Á – Thái Bình Dương",
+        "shortTitle": "Doanh nghiệp giống dự hội nghị khu vực châu Á – Thái Bình Dương"
+      },
+      "geneEditing": {
+        "title": "Xu hướng chỉnh sửa gen trong chọn tạo giống trên thế giới",
+        "shortTitle": "Xu hướng chỉnh sửa gen trong chọn tạo giống"
+      },
+      "vegetableSeedMarket": {
+        "title": "Thị trường hạt giống rau toàn cầu tiếp tục tăng trưởng"
+      }
+    },
+    "quick": {
+      "riceCatalogue": {
+        "time": "09:20",
+        "title": "Cập nhật danh mục giống lúa được công nhận lưu hành tháng 11"
+      },
+      "seedFair": {
+        "time": "Hôm qua",
+        "title": "Mở đăng ký Hội chợ Giống cây trồng 2027 tại Cần Thơ"
+      },
+      "membershipFee": {
+        "time": "15/11",
+        "title": "Thông báo thu hội phí năm 2026"
+      },
+      "vcuTrial": {
+        "time": "13/11",
+        "title": "Kết quả khảo nghiệm VCU giống ngô vụ Xuân 2026"
+      },
+      "researchCall": {
+        "time": "11/11",
+        "title": "Tuyển chọn đề tài KHCN cấp Hiệp hội năm 2027"
+      }
+    }
+  },
+  "lookup": {
+    "eyebrow": "Tra cứu giống cây trồng",
+    "title": "Tìm giống theo tên, loài cây hoặc đơn vị sở hữu",
+    "inputLabel": "Tên giống, loài cây hoặc đơn vị sở hữu",
+    "placeholder": "Ví dụ: lúa LM-01, ngô NM-01, dưa hấu...",
+    "submit": "Tra cứu",
+    "types": {
+      "recognised": {
+        "label": "Giống được công nhận lưu hành",
+        "shortLabel": "Giống được công nhận lưu hành"
+      },
+      "selfDeclared": {
+        "label": "Giống tự công bố lưu hành",
+        "shortLabel": "Giống tự công bố lưu hành"
+      },
+      "protected": {
+        "label": "Giống được bảo hộ quyền tác giả",
+        "shortLabel": "Giống được bảo hộ"
+      },
+      "expired": {
+        "label": "Giống bị hủy bỏ / hết hiệu lực",
+        "shortLabel": "Giống hết hiệu lực"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "Về Hiệp hội",
+    "title": "Tiếng nói chung của doanh nghiệp ngành giống",
+    "description": "VSTA đại diện cho doanh nghiệp sản xuất, kinh doanh giống cây trồng trong đối thoại chính sách, xúc tiến thương mại và nâng cao chất lượng giống.",
+    "facts": {
+      "term": "Nhiệm kỳ V (2026–2031)",
+      "members": "218 doanh nghiệp hội viên",
+      "branches": "12 chi hội theo vùng"
+    },
+    "learnMore": "Tìm hiểu về Hiệp hội"
+  },
+  "legal": {
+    "eyebrow": "Pháp luật & chính sách",
+    "title": "Văn bản pháp luật mới",
+    "description": "Văn bản quy phạm pháp luật về giống cây trồng, có trạng thái hiệu lực rõ ràng.",
+    "current": "Văn bản chính đang áp dụng",
+    "library": "Kho văn bản",
+    "inForce": "Còn hiệu lực",
+    "expired": "Hết hiệu lực",
+    "documents": {
+      "cropLaw": {
+        "number": "Luật · 31/2018/QH14",
+        "title": "Luật Trồng trọt"
+      },
+      "decree94": {
+        "number": "Nghị định · 94/2019/NĐ-CP",
+        "title": "Quy định chi tiết về giống cây trồng và canh tác"
+      },
+      "decree79": {
+        "number": "Nghị định · 79/2023/NĐ-CP",
+        "title": "Hướng dẫn Luật SHTT về quyền đối với giống cây trồng"
+      },
+      "decree130": {
+        "number": "Nghị định · 130/2022/NĐ-CP",
+        "title": "Sửa đổi Nghị định 84/2019 và 94/2019"
+      }
+    }
+  },
+  "events": {
+    "eyebrow": "Lịch sự kiện",
+    "title": "Sự kiện sắp tới",
+    "register": "Đăng ký tham dự",
+    "items": {
+      "riceSeminar": {
+        "month": "TH12",
+        "title": "Hội thảo Giải pháp nâng cao chất lượng hạt giống lúa xác nhận",
+        "shortTitle": "Hội thảo nâng cao chất lượng hạt giống lúa xác nhận",
+        "time": "08:30 – 11:30",
+        "shortTime": "08:30",
+        "place": "Cần Thơ",
+        "shortPlace": "Cần Thơ",
+        "description": "Chia sẻ kinh nghiệm kiểm soát chất lượng từ khâu sản xuất đến chế biến hạt giống.",
+        "shortDescription": "Chia sẻ kinh nghiệm kiểm soát chất lượng hạt giống."
+      },
+      "boardMeeting": {
+        "month": "TH12",
+        "title": "Hội nghị Ban Chấp hành VSTA mở rộng cuối năm 2026",
+        "shortTitle": "Hội nghị Ban Chấp hành VSTA mở rộng cuối năm",
+        "time": "13:30 – 17:00",
+        "shortTime": "13:30",
+        "place": "Hà Nội",
+        "shortPlace": "Hà Nội",
+        "description": "Đánh giá hoạt động năm 2026, thông qua kế hoạch công tác năm 2027.",
+        "shortDescription": "Đánh giá hoạt động năm 2026, kế hoạch 2027."
+      },
+      "seedFair": {
+        "month": "TH01",
+        "title": "Hội chợ Giống cây trồng và Vật tư nông nghiệp 2027",
+        "shortTitle": "Hội chợ Giống cây trồng 2027",
+        "time": "Cả ngày",
+        "shortTime": "Cả ngày",
+        "place": "TP. Hồ Chí Minh",
+        "shortPlace": "TP. HCM",
+        "description": "Gian hàng trưng bày, giới thiệu giống mới và kết nối giao thương.",
+        "shortDescription": "Trưng bày, giới thiệu giống mới, kết nối giao thương."
+      }
+    }
+  },
+  "members": {
+    "eyebrow": "Hội viên",
+    "title": "Doanh nghiệp đồng hành cùng Hiệp hội",
+    "description": "Thứ tự hiển thị được luân phiên mỗi lần tải trang nhằm bảo đảm cân bằng giữa các hội viên.",
+    "list": "Danh sách hội viên",
+    "sampleName": "Hội viên mẫu {initials}",
+    "summary": "doanh nghiệp hội viên trên 12 chi hội",
+    "shortSummary": "doanh nghiệp hội viên · 12 chi hội",
+    "updated": "Cập nhật 01/11/2026"
+  },
+  "knowledge": {
+    "eyebrow": "Tri thức ngành giống",
+    "title": "Khoa học công nghệ và Tư liệu",
+    "description": "Đề tài nghiên cứu, bài viết chuyên môn và kho tư liệu ảnh, video, ấn phẩm của ngành.",
+    "science": {
+      "count": "86 đề tài · 24 tiến bộ kỹ thuật",
+      "title": "Khoa học công nghệ",
+      "description": "Đề tài chọn tạo, khảo nghiệm, chuyển giao giống và bài viết chuyên môn từ hội viên.",
+      "featureEyebrow": "Đề tài nổi bật",
+      "featureTitle": "Giống lúa chịu mặn cho vùng ven biển ĐBSCL",
+      "primary": "Danh mục đề tài",
+      "secondary": "Bài viết KHCN",
+      "ongoing": "Đang triển khai",
+      "completed": "Đã nghiệm thu",
+      "projects": {
+        "saltRice": "Chọn tạo giống lúa chịu mặn vùng ven biển",
+        "maizeMarkers": "Chỉ thị phân tử kiểm định độ thuần ngô lai",
+        "vegetableF1": "Sản xuất hạt giống rau F1 trong nhà màng"
+      }
+    },
+    "library": {
+      "count": "12 ảnh · 6 video · 4 ấn phẩm",
+      "title": "Tư liệu",
+      "description": "Thư viện ảnh, video đã số hóa và tủ sách kỷ niệm 75 năm ngành trồng trọt.",
+      "featureEyebrow": "Sách kỷ niệm",
+      "featureTitle": "75 năm ngành trồng trọt Việt Nam",
+      "primary": "Vào thư viện",
+      "secondary": "Xem video"
+    }
+  },
+  "newsletter": {
+    "eyebrow": "Bản tin VSTA",
+    "title": "Nhận thông báo văn bản mới và giống mới công bố",
+    "description": "Bản tin phát hành định kỳ hàng tháng, tổng hợp văn bản pháp luật mới, danh mục giống cập nhật và hoạt động của Hiệp hội.",
+    "note": "Bản tin định kỳ hàng tháng. Bạn có thể hủy đăng ký bất cứ lúc nào.",
+    "otherChannels": "Kênh khác",
+    "messaging": "Nhắn tin",
+    "emailLabel": "Email của bạn",
+    "submit": "Đăng ký",
+    "invalidEmail": "Vui lòng nhập địa chỉ email hợp lệ.",
+    "pending": "Chức năng đăng ký bản tin đang được hoàn thiện."
+  }
+}

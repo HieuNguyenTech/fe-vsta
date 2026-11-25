@@ -61,6 +61,7 @@ import {
   IconPalette,
   IconPaperclip,
   IconPhone,
+  IconPrinter,
   IconPhoto,
   IconPizza,
   IconPlus,
@@ -88,8 +89,23 @@ import {
   IconUserX,
   IconUsers,
   IconVideo,
+  IconWorld,
   IconCrown,
-  IconX
+  IconX,
+  IconArchive,
+  IconArrowDown,
+  IconBrandFacebook,
+  IconBrandLinkedin,
+  IconBrandYoutube,
+  IconBuilding,
+  IconDatabase,
+  IconFlask,
+  IconMail,
+  IconMapPin,
+  IconMenu2,
+  IconScale,
+  IconSeeding,
+  IconUserPlus
 } from '@tabler/icons-react';
 
 export type Icon = React.ComponentType<IconProps>;
@@ -150,6 +166,7 @@ export const Icons = {
   chat: IconMessage,
   notification: IconBell,
   phone: IconPhone,
+  printer: IconPrinter,
   video: IconVideo,
   send: IconSend,
   paperclip: IconPaperclip,
@@ -223,5 +240,22 @@ export const Icons = {
   slash: IconSlash,
   calendar: IconCalendar,
   galleryVerticalEnd: IconStack2,
-  moreHorizontal: IconDots
+  moreHorizontal: IconDots,
+
+  // Landing page
+  archive: IconArchive,
+  arrowDown: IconArrowDown,
+  brandFacebook: IconBrandFacebook,
+  brandLinkedin: IconBrandLinkedin,
+  brandYoutube: IconBrandYoutube,
+  building: IconBuilding,
+  database: IconDatabase,
+  flask: IconFlask,
+  mail: IconMail,
+  mapPin: IconMapPin,
+  globe: IconWorld,
+  menu: IconMenu2,
+  scale: IconScale,
+  sprout: IconSeeding,
+  userPlus: IconUserPlus
 };

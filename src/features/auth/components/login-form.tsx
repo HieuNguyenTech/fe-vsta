@@ -10,9 +10,20 @@ import { loginSchema, type LoginValues } from '../schemas/login';
 export function LoginForm() {
   const login = useMutation({
     mutationFn: (values: LoginValues) =>
-      apiClient('/auth/login', { method: 'POST', body: JSON.stringify(values) }),
+      apiClient<{ data: { accessToken: string; refreshToken: string; expiresIn: number } }>(
+        '/auth/login',
+        {
+          method: 'POST',
+          body: JSON.stringify(values)
+        }
+      ),
     // A full load starts the dashboard with an empty query cache.
-    onSuccess: () => window.location.assign('/dashboard/overview')
+    onSuccess: ({ data: tokens }) => {
+      const maxAge = tokens.expiresIn || 900;
+      document.cookie = `cms_access=${encodeURIComponent(tokens.accessToken)}; path=/; max-age=${maxAge}; samesite=lax`;
+      document.cookie = `cms_refresh=${encodeURIComponent(tokens.refreshToken)}; path=/; max-age=2592000; samesite=lax`;
+      window.location.assign('/dashboard/overview');
+    }
   });
 
   const form = useAppForm({

@@ -13,6 +13,9 @@ const baseConfig: NextConfig = {
       }
     ]
   },
+  experimental: {
+    agentUpgrade: 'security'
+  },
   transpilePackages: ['geist'],
   compiler: {
     removeConsole: process.env.NODE_ENV === 'production'

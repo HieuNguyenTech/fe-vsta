@@ -1,0 +1,324 @@
+{
+  "meta": {
+    "title": "Vietnam Seed Trade Association (VSTA)",
+    "description": "Search plant varieties, legal documents, news, events and the VSTA member directory."
+  },
+  "hero": {
+    "label": "Highlights",
+    "goToSlide": "Go to slide {index}",
+    "previous": "Previous slide",
+    "next": "Next slide",
+    "scrollDown": "Scroll down",
+    "slides": {
+      "database": {
+        "label": "Variety database",
+        "title": "Official variety data,\nfound in seconds",
+        "description": "More than 3,400 plant varieties recognised, self-declared for circulation and protected – search by name, crop, owner and recommended region.",
+        "shortDescription": "More than 3,400 plant varieties recognised, self-declared and protected.",
+        "primary": "Search varieties",
+        "secondary": "About VSTA"
+      },
+      "legal": {
+        "label": "Law & policy",
+        "title": "Seed industry legislation,\nwith clear legal status",
+        "description": "Laws, decrees, circulars and procedure guides organised by field, with issue dates and current legal status.",
+        "shortDescription": "Laws, decrees and circulars with issue dates and legal status.",
+        "primary": "Browse legal documents",
+        "secondary": "Procedure guides"
+      },
+      "community": {
+        "label": "Member community",
+        "title": "Connecting over 120 companies,\nraising Vietnamese seed brands",
+        "description": "Member directory, regional branch network and trade promotion programmes at home and abroad.",
+        "shortDescription": "Member directory and regional branch network.",
+        "primary": "Member directory",
+        "secondary": "Apply to join"
+      }
+    }
+  },
+  "stats": {
+    "heading": "Vietnam's seed industry in numbers",
+    "shortHeading": "The seed industry in numbers",
+    "source": "Illustrative figures · updated 15/11/2026",
+    "items": {
+      "varieties": {
+        "label": "Plant varieties in the database",
+        "shortLabel": "Varieties on record",
+        "note": "126 more varieties than in 2025",
+        "shortNote": "126 more varieties"
+      },
+      "documents": {
+        "label": "Legal documents on plant varieties",
+        "shortLabel": "Legal documents",
+        "note": "With clear legal status",
+        "shortNote": "Clear status"
+      },
+      "members": {
+        "label": "Member companies",
+        "shortLabel": "Member companies",
+        "note": "In 12 regional branches",
+        "shortNote": "12 branches"
+      },
+      "projects": {
+        "label": "Science and technology projects",
+        "shortLabel": "S&T projects",
+        "note": "Ongoing and completed",
+        "shortNote": "Ongoing"
+      }
+    }
+  },
+  "news": {
+    "eyebrow": "News & events",
+    "title": "This week's highlights",
+    "description": "Updates on the Association, its members and the seed market at home and abroad.",
+    "readMore": "Read more",
+    "viewAllNews": "View all news",
+    "quickTitle": "In brief",
+    "tabs": {
+      "association": {
+        "label": "Association news",
+        "shortLabel": "Association",
+        "badge": "Conference",
+        "shortBadge": "Association",
+        "meta": "17/04/2026 · Association activities",
+        "title": "VSTA Congress 2026–2031: Renewal so that members benefit more",
+        "summary": "The Congress adopted a five-year direction focused on digitising variety data, legal support and expanding seed export markets.",
+        "shortSummary": "The Congress adopted a five-year direction focused on variety data and legal support."
+      },
+      "member": {
+        "label": "Member news",
+        "shortLabel": "Members",
+        "badge": "Members",
+        "shortBadge": "Members",
+        "meta": "16/11/2026 · Member news",
+        "title": "Members present high-quality rice varieties for the Winter–Spring crop",
+        "summary": "Short-duration, resilient varieties suited to the delta – member companies are securing supply for the coming season.",
+        "shortSummary": "Short-duration, resilient varieties suited to the delta."
+      },
+      "international": {
+        "label": "International news",
+        "shortLabel": "International",
+        "badge": "International",
+        "shortBadge": "International",
+        "meta": "15/11/2026 · International news",
+        "title": "Cambodia – a promising market for Vietnamese plant varieties",
+        "summary": "Companies propose a seed export strategy that supplies technology and farming practices instead of only raw produce.",
+        "shortSummary": "A proposed seed export strategy including technology and farming practices."
+      }
+    },
+    "rows": {
+      "autumnReview": {
+        "title": "Review conference on 2026 Autumn–Winter seed production in the Mekong Delta"
+      },
+      "saltTolerantRice": {
+        "title": "Member company launches 3 new salt-tolerant rice varieties"
+      },
+      "circularDraft": {
+        "title": "Comments on the draft circular on self-declaration of varieties"
+      },
+      "apsaDelegation": {
+        "title": "VSTA delegation attends the Asia–Pacific Seed Congress"
+      },
+      "processingLine": {
+        "title": "Member invests in an automated seed processing line"
+      },
+      "maizeLinkage": {
+        "title": "Hybrid maize seed production in partnership with cooperatives"
+      },
+      "vegetableDealers": {
+        "title": "Vegetable seed company expands its dealer network in central Vietnam"
+      },
+      "ecosystemExport": {
+        "title": "Exporting an “agricultural ecosystem”: seed, technology, practices"
+      },
+      "regionalCongress": {
+        "title": "Seed company delegation attends the Asia–Pacific regional congress",
+        "shortTitle": "Seed companies attend the Asia–Pacific regional congress"
+      },
+      "geneEditing": {
+        "title": "Global trends in gene editing for plant breeding",
+        "shortTitle": "Trends in gene editing for plant breeding"
+      },
+      "vegetableSeedMarket": {
+        "title": "The global vegetable seed market keeps growing"
+      }
+    },
+    "quick": {
+      "riceCatalogue": {
+        "time": "09:20",
+        "title": "November update to the list of recognised rice varieties"
+      },
+      "seedFair": {
+        "time": "Yesterday",
+        "title": "Registration opens for the 2027 Seed Fair in Can Tho"
+      },
+      "membershipFee": {
+        "time": "15/11",
+        "title": "Notice on 2026 membership fees"
+      },
+      "vcuTrial": {
+        "time": "13/11",
+        "title": "VCU trial results for Spring 2026 maize varieties"
+      },
+      "researchCall": {
+        "time": "11/11",
+        "title": "Call for 2027 Association research projects"
+      }
+    }
+  },
+  "lookup": {
+    "eyebrow": "Variety lookup",
+    "title": "Find varieties by name, crop or owner",
+    "inputLabel": "Variety name, crop or owner",
+    "placeholder": "E.g. rice LM-01, maize NM-01, watermelon...",
+    "submit": "Search",
+    "types": {
+      "recognised": {
+        "label": "Varieties recognised for circulation",
+        "shortLabel": "Recognised varieties"
+      },
+      "selfDeclared": {
+        "label": "Varieties self-declared for circulation",
+        "shortLabel": "Self-declared varieties"
+      },
+      "protected": {
+        "label": "Varieties under breeder's rights",
+        "shortLabel": "Protected varieties"
+      },
+      "expired": {
+        "label": "Revoked / expired varieties",
+        "shortLabel": "Expired varieties"
+      }
+    }
+  },
+  "about": {
+    "eyebrow": "About the Association",
+    "title": "The shared voice of seed businesses",
+    "description": "VSTA represents plant variety producers and traders in policy dialogue, trade promotion and seed quality improvement.",
+    "facts": {
+      "term": "5th term (2026–2031)",
+      "members": "218 member companies",
+      "branches": "12 regional branches"
+    },
+    "learnMore": "Learn about the Association"
+  },
+  "legal": {
+    "eyebrow": "Law & policy",
+    "title": "Latest legal documents",
+    "description": "Legislation on plant varieties, with clear legal status.",
+    "current": "Key documents in force",
+    "library": "Document library",
+    "inForce": "In force",
+    "expired": "Expired",
+    "documents": {
+      "cropLaw": {
+        "number": "Law · 31/2018/QH14",
+        "title": "Law on Crop Production"
+      },
+      "decree94": {
+        "number": "Decree · 94/2019/NĐ-CP",
+        "title": "Detailed regulations on plant varieties and cultivation"
+      },
+      "decree79": {
+        "number": "Decree · 79/2023/NĐ-CP",
+        "title": "Guidance on the IP Law regarding rights to plant varieties"
+      },
+      "decree130": {
+        "number": "Decree · 130/2022/NĐ-CP",
+        "title": "Amendments to Decrees 84/2019 and 94/2019"
+      }
+    }
+  },
+  "events": {
+    "eyebrow": "Event calendar",
+    "title": "Upcoming events",
+    "register": "Register to attend",
+    "items": {
+      "riceSeminar": {
+        "month": "DEC",
+        "title": "Seminar on improving the quality of certified rice seed",
+        "shortTitle": "Seminar on certified rice seed quality",
+        "time": "08:30 – 11:30",
+        "shortTime": "08:30",
+        "place": "Can Tho",
+        "shortPlace": "Can Tho",
+        "description": "Sharing experience in quality control from seed production to processing.",
+        "shortDescription": "Sharing experience in seed quality control."
+      },
+      "boardMeeting": {
+        "month": "DEC",
+        "title": "VSTA extended Executive Board meeting, year-end 2026",
+        "shortTitle": "VSTA year-end Executive Board meeting",
+        "time": "13:30 – 17:00",
+        "shortTime": "13:30",
+        "place": "Hanoi",
+        "shortPlace": "Hanoi",
+        "description": "Review of 2026 activities and approval of the 2027 work plan.",
+        "shortDescription": "2026 review and 2027 plan."
+      },
+      "seedFair": {
+        "month": "JAN",
+        "title": "Plant Variety and Agricultural Supplies Fair 2027",
+        "shortTitle": "Seed Fair 2027",
+        "time": "All day",
+        "shortTime": "All day",
+        "place": "Ho Chi Minh City",
+        "shortPlace": "HCMC",
+        "description": "Exhibition booths, new variety showcases and business matching.",
+        "shortDescription": "Showcases of new varieties and business matching."
+      }
+    }
+  },
+  "members": {
+    "eyebrow": "Members",
+    "title": "Companies working with the Association",
+    "description": "The display order rotates on every page load to keep members equally visible.",
+    "list": "Member list",
+    "sampleName": "Sample member {initials}",
+    "summary": "member companies across 12 branches",
+    "shortSummary": "member companies · 12 branches",
+    "updated": "Updated 01/11/2026"
+  },
+  "knowledge": {
+    "eyebrow": "Seed industry knowledge",
+    "title": "Science, technology and library",
+    "description": "Research projects, expert articles and the industry's photo, video and publication archive.",
+    "science": {
+      "count": "86 projects · 24 technical advances",
+      "title": "Science & technology",
+      "description": "Breeding, testing and transfer projects, plus expert articles from members.",
+      "featureEyebrow": "Featured project",
+      "featureTitle": "Salt-tolerant rice for the Mekong Delta coast",
+      "primary": "Research projects",
+      "secondary": "S&T articles",
+      "ongoing": "Ongoing",
+      "completed": "Completed",
+      "projects": {
+        "saltRice": "Breeding salt-tolerant rice for coastal areas",
+        "maizeMarkers": "Molecular markers for hybrid maize purity testing",
+        "vegetableF1": "F1 vegetable seed production in greenhouses"
+      }
+    },
+    "library": {
+      "count": "12 photos · 6 videos · 4 publications",
+      "title": "Library",
+      "description": "Photo gallery, digitised videos and books marking 75 years of crop production.",
+      "featureEyebrow": "Commemorative book",
+      "featureTitle": "75 years of crop production in Vietnam",
+      "primary": "Open library",
+      "secondary": "Watch videos"
+    }
+  },
+  "newsletter": {
+    "eyebrow": "VSTA newsletter",
+    "title": "Get notified of new documents and newly declared varieties",
+    "description": "A monthly newsletter covering new legislation, variety list updates and Association activities.",
+    "note": "Sent monthly. You can unsubscribe at any time.",
+    "otherChannels": "Other channels",
+    "messaging": "Message us",
+    "emailLabel": "Your email",
+    "submit": "Subscribe",
+    "invalidEmail": "Please enter a valid email address.",
+    "pending": "Newsletter sign-up is not available yet."
+  }
+}

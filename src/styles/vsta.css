@@ -1,0 +1,50 @@
+/* Design tokens of the VSTA landing page (Figma "Reqwise Tokens").
+   Prefixed with `vsta-` so they never collide with the dashboard themes. */
+@theme {
+  --color-vsta-bg-50: #fcfefd;
+  --color-vsta-bg-100: #f4f7f4;
+  --color-vsta-bg-200: #e8eee9;
+  --color-vsta-bg-300: #d8e0d9;
+  --color-vsta-bg-400: #c0cac2;
+  --color-vsta-bg-500: #9faaa1;
+
+  --color-vsta-primary-100: #d8f6df;
+  --color-vsta-primary-300: #90d9a3;
+  --color-vsta-primary-400: #54b674;
+  --color-vsta-primary-500: #008843;
+  --color-vsta-primary-600: #006e35;
+  --color-vsta-primary-700: #005728;
+  --color-vsta-primary-800: #003f1c;
+  --color-vsta-primary-900: #002b11;
+
+  --color-vsta-accent-100: #fbfcc2;
+  --color-vsta-accent-200: #f8f795;
+  --color-vsta-accent-300: #f4f168;
+  --color-vsta-accent-400: #efeb43;
+  --color-vsta-accent-500: #eae519;
+  --color-vsta-accent-600: #dacd00;
+  --color-vsta-accent-900: #6d5e00;
+
+  --color-vsta-secondary-50: #f3faf5;
+  --color-vsta-secondary-100: #e4f3e8;
+  --color-vsta-secondary-200: #d1e9d8;
+
+  --color-vsta-fg-400: #9ca7b0;
+  --color-vsta-fg-500: #76838c;
+  --color-vsta-fg-600: #59666f;
+  --color-vsta-fg-700: #3e4a53;
+  --color-vsta-fg-800: #2a353d;
+  --color-vsta-fg-900: #1e272d;
+  --color-vsta-fg-950: #0f151a;
+
+  --color-vsta-danger-600: #c2362b;
+}
+
+/* Applied to the page root and to every portaled popup: keeps the design
+   independent from the active dashboard theme (spacing, font, dark mode). */
+.vsta-scope {
+  --spacing: 0.25rem;
+  color-scheme: light;
+  font-family: var(--font-be-vietnam), ui-sans-serif, system-ui, sans-serif;
+  letter-spacing: normal;
+}

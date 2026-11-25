@@ -3,7 +3,7 @@ import { backendFetch, unavailableResponse } from '@/features/auth/server/backen
 import { ACCESS_COOKIE } from '@/features/auth/server/cookies';
 
 /** Only these backend resources are reachable from the browser. Add new modules here. */
-const ALLOWED = new Set(['users', 'roles', 'permissions']);
+const ALLOWED = new Set(['users', 'roles', 'permissions', 'contacts']);
 
 async function forward(request: NextRequest, context: { params: Promise<{ path: string[] }> }) {
   const { path } = await context.params;
@@ -11,8 +11,10 @@ async function forward(request: NextRequest, context: { params: Promise<{ path: 
     return NextResponse.json({ statusCode: 404, message: 'Not found' }, { status: 404 });
   }
 
+  const isPublicContactSubmission =
+    path[0] === 'contacts' && request.method === 'POST' && path.length === 1;
   const accessToken = request.cookies.get(ACCESS_COOKIE)?.value;
-  if (!accessToken) {
+  if (!isPublicContactSubmission && !accessToken) {
     return NextResponse.json(
       { statusCode: 401, message: 'Authentication required' },
       { status: 401 }
