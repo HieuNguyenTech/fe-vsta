@@ -1,5 +1,7 @@
 services:
   frontend:
+    env_file:
+      - .env
     build:
       context: .
       dockerfile: Dockerfile
@@ -11,7 +13,7 @@ services:
     environment:
       NODE_ENV: production
       PORT: 3000
-      BACKEND_URL: http://api:8000
+      BACKEND_URL: ${BACKEND_URL:-http://api:8000}
       NEXT_PUBLIC_SENTRY_DISABLED: ${NEXT_PUBLIC_SENTRY_DISABLED:-true}
       NEXT_PUBLIC_SENTRY_DSN: ${NEXT_PUBLIC_SENTRY_DSN:-}
       NEXT_PUBLIC_SENTRY_ORG: ${NEXT_PUBLIC_SENTRY_ORG:-}
