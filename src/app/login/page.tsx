@@ -48,7 +48,7 @@ export default async function LoginPage() {
           </p>
         </section>
 
-        <section className='p-6 sm:p-10'>
+        <section className='p-6 text-vsta-fg-950 sm:p-10'>
           <Link
             href='/'
             className={cn(
@@ -72,9 +72,11 @@ export default async function LoginPage() {
               <p className='text-xs text-muted-foreground'>Trade Association</p>
             </div>
           </div>
-          <Card className='border-0 bg-transparent p-2 shadow-none ring-0 sm:p-3'>
+          <Card className='border-0 bg-transparent p-2 text-vsta-fg-950 shadow-none ring-0 sm:p-3'>
             <CardHeader className='px-0'>
-              <CardTitle className='text-3xl tracking-tight'>Chào mừng trở lại</CardTitle>
+              <CardTitle className='text-vsta-fg-950 text-3xl tracking-tight'>
+                Chào mừng trở lại
+              </CardTitle>
               <CardDescription className='mt-2'>
                 Đăng nhập để tiếp tục vào hệ thống quản trị.
               </CardDescription>

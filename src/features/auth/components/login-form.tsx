@@ -46,7 +46,13 @@ export function LoginForm() {
         <form.AppField
           name='email'
           children={(field) => (
-            <field.TextField label='Email' type='email' autoComplete='username' required />
+            <field.TextField
+              label='Email'
+              type='email'
+              autoComplete='username'
+              required
+              className='border-vsta-bg-300 bg-white text-vsta-fg-950 placeholder:text-vsta-fg-500 focus-visible:border-vsta-primary-500 focus-visible:ring-vsta-primary-500/30'
+            />
           )}
         />
         <form.AppField
@@ -57,12 +63,17 @@ export function LoginForm() {
               type='password'
               autoComplete='current-password'
               required
+              className='border-vsta-bg-300 bg-white text-vsta-fg-950 placeholder:text-vsta-fg-500 focus-visible:border-vsta-primary-500 focus-visible:ring-vsta-primary-500/30'
             />
           )}
         />
       </FieldGroup>
       {login.error && <FieldError>{login.error.message}</FieldError>}
-      <LoadingButton type='submit' loading={login.isPending || login.isSuccess}>
+      <LoadingButton
+        type='submit'
+        loading={login.isPending || login.isSuccess}
+        className='bg-vsta-primary-700 text-white hover:bg-vsta-primary-800'
+      >
         Sign in
       </LoadingButton>
     </form>
